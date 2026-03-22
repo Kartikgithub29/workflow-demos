@@ -16,11 +16,11 @@ jobs:
         - name: install cowsay
           run: sudo apt install cowsay -y
 
-        - name: Create octopus
-          run: cowsay -f octopus "I live in water" >> octopus.txt
+        - name: Create bunny
+          run: cowsay -f bunny "I live in jungle" >> bunny.txt
 
-        - name: show octopus
-          run: cat octopus.txt
+        - name: show bunny
+          run: cat bunny.txt
 
 
         
