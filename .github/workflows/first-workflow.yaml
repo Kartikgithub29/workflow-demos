@@ -6,13 +6,21 @@ jobs:
         steps:
         - name: Checkout repo
           uses: actions/checkout@v6
-          
+
         - name: Welcome message
-          run: echo "My first github workflow command"
+          run:
+             echo "My first github workflow command"
+             ls
+             cat index.html
 
-        - name: List files
-          run: ls
+        - name: install cowsay
+          run: sudo apt install cowsay -y
 
-        - name: show index.html
-          run: cat index.html
+        - name: Create dog
+          run: cowsay -f dog "I bark" >> dog.txt
+
+        - name: show dog
+          run: cat dog.txt
+
+
         
