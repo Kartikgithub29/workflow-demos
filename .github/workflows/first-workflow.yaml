@@ -15,7 +15,4 @@ jobs:
             chmod +x my-script.sh
             ./my-script.sh
        
-        - name: show 
-          run:  cat my-script.sh
-
         
