@@ -1,0 +1,45 @@
+name: Multiple jobs
+on: push
+jobs: 
+    job1:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Install cowsay -y
+          run: sudo apt install cowsay -y
+
+        - name: Generate dragon
+          run: cowsay -f dragon "I am Caraxes." >> dragon.txt
+
+        - name: Send dragon
+          uses: actions/upload-artifact@v4
+          with:
+            name: dragon-file
+            path: dragon.txt
+
+        - name: Sleep for 10 seconds
+          run: sleep 10
+
+    job2:
+        needs: job1
+        runs-on: ubuntu-latest
+        steps: 
+        - name: Call the dragon
+          uses: actions/download-artifact@v8
+          with:
+            name: dragon-file
+            
+        - name: test dragon file
+          run: ls dragon.txt
+
+    job3:
+        needs: job2
+        runs-on: ubuntu-latest
+        steps:
+        - name: Call the dragon
+          uses: actions/download-artifact@v8
+          with:
+            name: dragon-file
+
+        - name: show dragon
+          run: cat dragon.txt
+          
