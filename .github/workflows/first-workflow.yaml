@@ -7,20 +7,12 @@ jobs:
         - name: Checkout repo
           uses: actions/checkout@v6
 
-        - name: Welcome message
-          run:
-             echo "My first github workflow command"
-             ls
-             cat index.html
+        - name: List files
+          run: ls
 
-        - name: install cowsay
-          run: sudo apt install cowsay -y
-
-        - name: Create bunny
-          run: cowsay -f bunny "I live in jungle" >> bunny.txt
-
-        - name: show bunny
-          run: cat bunny.txt
-
+        - name: execute shell script
+          run: 
+            chmod +x my-script.sh
+            ./my-script.sh
 
         
