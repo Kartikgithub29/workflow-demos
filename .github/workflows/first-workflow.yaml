@@ -13,6 +13,6 @@ jobs:
         - name: execute shell script
           run: 
             chmod +x my-script.sh
-            ./my-script.sh
+            ./scripts/my-script.sh
        
         
