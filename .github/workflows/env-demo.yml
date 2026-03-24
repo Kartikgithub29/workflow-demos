@@ -3,7 +3,7 @@ name: Environment Variables Demo
 on:
   push:
 
-# 🌍 Workflow-level env
+
 env:
   GLOBAL_VAR: "I am a global variable"
 
@@ -11,7 +11,7 @@ jobs:
   demo:
     runs-on: ubuntu-latest
 
-    # 🧱 Job-level env
+
     env:
       JOB_VAR: "I am a job variable"
 
