@@ -1,0 +1,26 @@
+name: Environment Variables Demo
+
+on:
+  push:
+
+# 🌍 Workflow-level env
+env:
+  GLOBAL_VAR: "I am a global variable"
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    # 🧱 Job-level env
+    env:
+      JOB_VAR: "I am a job variable"
+
+    steps:
+      - name: Print Workflow & Job Variables
+        run: echo "$GLOBAL_VAR | $JOB_VAR"
+
+      - name: Step with its own env
+        # ⚙️ Step-level env
+        env:
+          STEP_VAR: "I am a step variable"
+        run: echo "$GLOBAL_VAR | $JOB_VAR | $STEP_VAR"
