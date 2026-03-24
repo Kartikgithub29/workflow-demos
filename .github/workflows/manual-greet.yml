@@ -1,0 +1,12 @@
+name: Manual Greet Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print Greeting
+        run: echo "Hello! This workflow was triggered manually 🎉"
